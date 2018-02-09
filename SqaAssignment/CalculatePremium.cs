@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace SqaAssignment
 {
-    class CalculatePremium
+    public class CalculatePremium
     {
+        public CalculatePremium() { }
+
         public float CalcPremium(int age, string gender)
         {
             float premium;
