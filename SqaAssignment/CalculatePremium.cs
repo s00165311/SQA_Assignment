@@ -1,4 +1,6 @@
-﻿using System;
+﻿using fit;
+using fit.Fixtures;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -54,5 +56,19 @@ namespace SqaAssignment
 
         }
 
+    }
+
+    public class CalcPremiumTest : ColumnFixture
+    {
+        public int age;
+        public string gender;
+        public float premium;
+
+        public CalculatePremium calcprem = new CalculatePremium();
+
+        public float CalculatePremiumTest(int age, string gender)
+        {
+            return calcprem.CalcPremium(age, gender);
+        }
     }
 }
