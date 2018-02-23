@@ -20,40 +20,26 @@ namespace SqaAssignment
             if (gender == "female")
 	            if ((age >= 18) && (age <= 30))
                             premium = 5.0F;
-                        else
+            else
                     if (age >= 31)
                             premium = 2.50F;
-                        else
+                    else
                             premium = 0.0F;
-         else
-	        if (gender == "male")
-	            if ((age >= 18) && (age <= 35))
-                        premium = 6.0F;
+            else
+	            if (gender == "male")
+	                if ((age >= 18) && (age <= 35))
+                            premium = 6.0F;
                     else
-                   if (age >= 36)
-                        premium = 5.0F;
-                    else
-                        premium = 0.0F;
-         else
-		        premium = 0.0F;
+                       if (age >= 36)
+                            premium = 5.0F;
+                       else
+                            premium = 0.0F;
+            else
+		            premium = 0.0F;
 
-                if (age >= 50)
-                    premium = premium * 0.15F;
-                return premium;
-        }
-        public class CalculatePremiumTest : ColumnFixture
-        {
-            public string gender;
-            public int age;
-            public float premium;
-
-            public CalculatePremium cal = new CalculatePremium();
-            
-            public float CalcPremium()
-            {
-                return cal.CalcPremium(age, gender);
-            }
-
+            if (age >= 50)
+                premium = (premium * 0.15F)+premium;
+            return premium;
         }
 
     }
@@ -62,11 +48,11 @@ namespace SqaAssignment
     {
         public int age;
         public string gender;
-        public float premium;
+       
 
         public CalculatePremium calcprem = new CalculatePremium();
 
-        public float CalculatePremiumTest(int age, string gender)
+        public float CalcT()
         {
             return calcprem.CalcPremium(age, gender);
         }
